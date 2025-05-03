@@ -15,6 +15,8 @@ Forget SaaS-based APIs with rate limits, latency, and vendor lock-ins. We're tal
 
 This project is still very much a work-in-progress (WIP), but it already has some solid foundations that aren’t going anywhere.
 
+![](./llm-ai-ui.png)
+
 ---
 
 ## 🧩 The Building Blocks

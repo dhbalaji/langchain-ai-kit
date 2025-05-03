@@ -23,10 +23,12 @@ export const Assistant = () => {
 
   return (
     <AssistantRuntimeProvider runtime={runtime}>
-      <div className="grid h-dvh grid-cols-[200px_1fr] gap-x-2 px-4 py-4">
-        <ThreadList />
-        <Thread />
-      </div>
+      {/* <div className="grid grid-cols-[200px_1fr] gap-x-2 px-4 py-4"  style={{ height: "calc(100dvh - 3.75rem)" }}> */}
+        {/* <ThreadList /> */}
+        <div style={{ height: "calc(100dvh - 3.75rem)" }}>
+        <Thread  />
+        </div>
+      {/* </div> */}
     </AssistantRuntimeProvider>
   );
 };

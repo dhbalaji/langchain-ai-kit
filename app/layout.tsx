@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import { Github } from "lucide-react";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -23,11 +24,30 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-gray-100 flex justify-center items-center h-full`}
       >
-        {children}
+        <div className="bg-white shadow-lg rounded-lg border border-gray-200 w-full max-w-4xl p-1">
+          <header>
+            <div className="flex h-12 items-center justify-between px-4">
+              <a href="/">
+                <h1 className="text-xl font-bold">Local LLM AI UI</h1>
+              </a>
+              <div className="flex items-center gap-2">
+                <a
+                  href="https://github.com/dhbalaji/llm-on-local-AI-UI"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 text-gray-800 hover:text-gray-600"
+                >
+                  <Github className="h-5 w-5" /> Github
+                </a>
+              </div>
+            </div>
+          </header>
+          <main>{children}</main>
+        </div>
       </body>
     </html>
   );
