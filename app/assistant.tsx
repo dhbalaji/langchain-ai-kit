@@ -7,10 +7,19 @@ import { ThreadList } from "@/components/assistant-ui/thread-list";
 
 export const Assistant = () => {
   const runtime = useChatRuntime({
-    api: "/api/chat",
+    api: process.env.NEXT_PUBLIC_URL!,
+    initialMessages: [
+      {
+        role: "system",
+        content: [
+          {
+            text: "The response should be short and concise, with a maximum of 100 words.",
+            type: "text",
+          },
+        ],
+      },
+    ]
   });
-
-  console.log("Assistant runtime:", runtime);
 
   return (
     <AssistantRuntimeProvider runtime={runtime}>
